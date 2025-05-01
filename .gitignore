@@ -1,0 +1,6 @@
+.vscode/
+farmer-manager/.idea
+farmer-manager/vue/node_modules/
+farmer-manager/vue/dist/
+farmer-manager/springboot/target/
+farmer-manager/springboot/.idea/
