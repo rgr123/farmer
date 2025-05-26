@@ -47,7 +47,7 @@ const routes = [
       { path: 'Orders', name: 'FrontOrders', meta: { name: '订单信息' }, component: () => import('../views/front/Orders.vue') },
       { path: 'Apply', name: 'FrontApply', meta: { name: '贫困户申请' }, component: () => import('../views/front/Apply.vue') },
       { path: 'Praise', name: 'FrontPraise', meta: { name: '点赞' }, component: () => import('../views/front/Praise.vue') },
-      { path: 'GoodsUpload', name: 'FrontGoodsUpload', meta: { name: '商品上传' }, component: () => import('../views/front/UploadGoods.vue') },
+      { path: 'UploadGoods', name: 'FrontGoodsUpload', meta: { name: '上架货物' }, component: () => import('../views/front/UploadGoods.vue') },
     ]
   },
   { path: '/login', name: 'Login', meta: { name: '登录' }, component: () => import('../views/Login.vue') },

@@ -46,7 +46,7 @@
       <div style="text-align: center; color: #19a14b; font-size: 25px; font-weight: 550">优质农产品</div>
       <div style="height: 1000px">
         <el-col :span="4" style="margin-top: 30px" v-for="item in goodsData" :key="item.id">
-          <img :src="item.img" alt="" style="width: 100%; height: 180px; border-radius: 10px; border: 1px solid #cccccc">
+          <img :src="item.img" alt="" style="width: 100%; height: 270px; border-radius: 10px; border: 1px solid #cccccc">
           <div style="text-align: left; font-weight: 530; font-size: 16px; margin-top: 10px" class="overflowShow">{{ item.name }}
            </div>
           <div style="margin-top: 10px;display: flex;justify-content: space-between;" >

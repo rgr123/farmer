@@ -1,5 +1,10 @@
 <template>
-    <div class="goods-upload">
+  <div class="main-content">
+    <div class="form-container" style="width: 80%; margin: 20px auto">
+      <!-- 标题部分 -->
+      <div style="font-size: 17px; margin: 20px 10px">上架货物</div>
+
+      <!-- 表单部分 -->
       <el-form label-width="100px" style="padding-right: 50px" :model="form" :rules="rules" ref="formRef">
         <el-form-item label="商品图片">
           <el-upload
@@ -26,47 +31,48 @@
         </el-form-item>
       </el-form>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    data() {
-      return {
-        user: JSON.parse(localStorage.getItem('xm-user') || '{}'), // 获取当前用户信息
-        form: {
-          name: '',
-          price: '',
-          num: '',
-          imageUrl: ''
-        },
-        rules: {
-          name: [{ required: true, message: '请输入商品名称', trigger: 'blur' }],
-          price: [{ required: true, message: '请输入商品价格', trigger: 'blur' }],
-          num: [{ required: true, message: '请输入商品库存', trigger: 'blur' }]
-        }
-      };
-    },
-    methods: {
-      handleAvatarSuccess(response) {
-        this.form.imageUrl = response.data.url; // 保存上传图片的 URL
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      user: JSON.parse(localStorage.getItem('xm-user') || '{}'),
+      form: {
+        name: '',
+        price: '',
+        num: '',
+        img: ''
       },
-      save() {
-        this.$refs.formRef.validate(valid => {
-          if (valid) {
-            this.$request.post('/goods/upload', {
-              ...this.form,
-              userId: this.user.id // 关联当前用户
-            }).then(res => {
-              if (res.code === '200') {
-                this.$message.success('商品上架成功');
-                this.$router.push('/front/Person'); // 跳转到个人信息页面
-              } else {
-                this.$message.error(res.msg);
-              }
-            });
-          }
-        });
+      rules: {
+        name: [{ required: true, message: '请输入商品名称', trigger: 'blur' }],
+        price: [{ required: true, message: '请输入商品价格', trigger: 'blur' }],
+        num: [{ required: true, message: '请输入商品库存', trigger: 'blur' }]
       }
+    };
+  },
+  methods: {
+    handleAvatarSuccess(response, file, fileList) {
+      this.form.img = response.data
+    },
+    save() {
+      this.$refs.formRef.validate(valid => {
+        if (valid) {
+          this.$request.post('/goods/upload', {
+            ...this.form,
+            userId: this.user.id
+          }).then(res => {
+            if (res.code === '200') {
+              this.$message.success('商品上架成功');
+              this.$router.push('/front');
+            } else {
+              this.$message.error(res.msg);
+            }
+          });
+        }
+      });
     }
-  };
-  </script>
+  }
+};
+</script>

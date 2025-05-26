@@ -17,7 +17,14 @@ public class Goods implements Serializable {
     private Double price;
     private Integer num;
     private Integer sales;
+    private Integer userId;
     private String img;
 
-
+    public Integer getUserId() {
+        return userId;
+    }
+    
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
 }

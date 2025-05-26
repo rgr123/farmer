@@ -53,6 +53,7 @@ public class OrdersService {
         Goods goods = goodsMapper.selectById(orders.getGoodsId());
         if (ObjectUtil.isNotEmpty(goods)) {
             goods.setNum(goods.getNum() - 1);
+            goods.setSales(goods.getSales() + 1); // 增加销量
             goodsMapper.updateById(goods);
         }
     }
