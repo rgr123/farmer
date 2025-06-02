@@ -11,6 +11,9 @@
         <div class="front-header-nav">
         </div>
       </div>
+      <div style="text-align: right; margin: 20px 40px 0 0">
+        <el-button type="success" icon="el-icon-chat-dot-round" @click="navTo('/front/ChatRoom')">进入聊天室</el-button>
+      </div>
       <div class="front-header-right">
         <div v-if="!user.username">
           <el-button @click="$router.push('/login')">登录</el-button>

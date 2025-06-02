@@ -48,6 +48,8 @@ const routes = [
       { path: 'Apply', name: 'FrontApply', meta: { name: '贫困户申请' }, component: () => import('../views/front/Apply.vue') },
       { path: 'Praise', name: 'FrontPraise', meta: { name: '点赞' }, component: () => import('../views/front/Praise.vue') },
       { path: 'UploadGoods', name: 'FrontGoodsUpload', meta: { name: '上架货物' }, component: () => import('../views/front/UploadGoods.vue') },
+      { path: 'ChatRoom', name: 'FrontChatRoom', meta: { name: '聊天室' }, component: () => import('../views/front/ChatRoom.vue') },
+      { path: 'ChatAI', name: 'FrontChatAI', meta: { name: 'AI 聊天室' }, component: () => import('../views/front/ChatWithAI.vue') },
     ]
   },
   { path: '/login', name: 'Login', meta: { name: '登录' }, component: () => import('../views/Login.vue') },

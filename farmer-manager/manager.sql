@@ -20,7 +20,7 @@ CREATE TABLE `admin`  (
 -- ----------------------------
 -- Records of admin
 -- ----------------------------
-INSERT INTO `admin` VALUES (1, 'admin', 'admin', '管理员', 'http://localhost:9090/files/1697438073596-avatar.png','ADMIN', '13677889922', 'admin@xm.com');
+INSERT INTO `admin` VALUES (1, 'admin', 'admin', '管理员', 'http://localhost:/files/1697438073596-avatar.png','ADMIN', '13677889922', 'admin@xm.com');
 
 -- ----------------------------
 -- Table structure for notice

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50739
 File Encoding         : 65001
 
-Date: 2025-05-05 10:31:02
+Date: 2025-06-01 10:31:46
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -49,12 +49,12 @@ CREATE TABLE `agritainment` (
   `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of agritainment
 -- ----------------------------
-INSERT INTO `agritainment` VALUES ('2', '1111', null, null, '2025-04-29 00:00:00', '<p>11111</p>', 'http://localhost:9090/files/1745898274546-811ba429d108297db4bef87205876036.jpeg');
+INSERT INTO `agritainment` VALUES ('3', '农家小院', null, null, '2025-05-06 22:15:31', '<p><strong>特色亮点</strong></p><ol><li><p><strong>自然风光沉浸</strong></p><ul><li><p>推窗见山峦叠翠，漫步闻稻花香</p></li><li><p>夜观繁星萤火，晨听鸟语鸡鸣</p></li><li><p>四季景致各异：春赏花、夏摘果、秋收稻、冬围炉</p></li></ul></li><li><p><strong>农事体验趣味多</strong></p><ul><li><p>亲子插秧/采摘（应季水果蔬菜现采现尝）</p></li><li><p>传统手工制作（磨豆腐、酿米酒、编竹筐）</p></li><li><p>萌宠互动（喂食小羊、捡鸡蛋、赶鸭子）</p></li></ul></li><li><p><strong>地道农家美食</strong></p><ul><li><p>柴火灶台烹制的土鸡煲、腊味合蒸</p></li><li><p>现捞河鲜、时令野菜等天然食材</p></li><li><p>特色体验：自助烧烤、竹筒饭DIY、露天星空晚餐</p></li></ul></li><li><p><strong>文化传承体验</strong></p><ul><li><p>参与民俗活动（舞龙灯、剪纸、打年糕）</p></li><li><p>参观老农具展览馆，听老一辈讲农耕故事</p></li><li><p>学习二十四节气与农事的关系</p></li></ul></li></ol><p><strong>推荐活动安排</strong></p><ul><li><p>一日游：果蔬采摘+农事体验+农家午餐+垂钓</p></li><li><p>两日游：入住特色民宿+星空篝火晚会+登山观日出+非遗手作课程</p></li></ul><p><strong>温馨提示</strong></p><ul><li><p>建议穿着轻便衣物与运动鞋，备好防晒防蚊用品</p></li><li><p>提前咨询时令活动，春秋季为最佳体验时段</p></li><li><p>尊重乡村习俗，爱护农田环境</p></li></ul>', 'http://localhost:9090/files/1746540738852-680892d3450551f947bea636a7abfd2.jpg');
 
 -- ----------------------------
 -- Table structure for comment
@@ -99,9 +99,9 @@ CREATE TABLE `goods` (
 -- Records of goods
 -- ----------------------------
 INSERT INTO `goods` VALUES ('1', '农夫山泉', '2.00', '97', '0', 'http://localhost:9090/files/1745834196806-img_053.jpg', null);
-INSERT INTO `goods` VALUES ('2', '红富士苹果', '4.00', '100', '0', 'http://localhost:9090/files/1746062103565-img_217.jpg', null);
-INSERT INTO `goods` VALUES ('5', '东鹏特饮', '5.00', '99', '0', 'http://localhost:9090/files/1746246051157-img_011.jpg', null);
-INSERT INTO `goods` VALUES ('9', '红牛', '6.00', '91', '3', 'http://localhost:9090/files/1746269035657-img_153.jpg', null);
+INSERT INTO `goods` VALUES ('2', '红富士苹果', '4.00', '99', '1', 'http://localhost:9090/files/1746062103565-img_217.jpg', null);
+INSERT INTO `goods` VALUES ('5', '东鹏特饮', '5.00', '97', '2', 'http://localhost:9090/files/1746246051157-img_011.jpg', null);
+INSERT INTO `goods` VALUES ('9', '红牛', '6.00', '90', '4', 'http://localhost:9090/files/1746269035657-img_153.jpg', null);
 INSERT INTO `goods` VALUES ('13', '百事可乐', '3.00', '0', '0', 'http://localhost:9090/files/1746269315634-e060b5332a432ef1b3eceb3ea92f1820.jpeg', null);
 
 -- ----------------------------
@@ -122,6 +122,49 @@ CREATE TABLE `information` (
 -- Records of information
 -- ----------------------------
 INSERT INTO `information` VALUES ('1', '农产品大降价', null, '<p>近日将大幅度降低农产品的价格，大伙火速购买</p>', '2025-04-29 17:05:07', null);
+
+-- ----------------------------
+-- Table structure for message
+-- ----------------------------
+DROP TABLE IF EXISTS `message`;
+CREATE TABLE `message` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+-- ----------------------------
+-- Records of message
+-- ----------------------------
+INSERT INTO `message` VALUES ('1', 'admin', 'http://localhost:9090/files/1744598284343-b1284c3e6279e6178eadd7b3d780636f.jpeg', '123', '2025-05-31 21:16:15');
+INSERT INTO `message` VALUES ('2', 'admin', 'http://localhost:9090/files/1744598284343-b1284c3e6279e6178eadd7b3d780636f.jpeg', '123', '2025-05-31 21:17:00');
+INSERT INTO `message` VALUES ('3', 'admin', 'http://localhost:9090/files/1744598284343-b1284c3e6279e6178eadd7b3d780636f.jpeg', '1', '2025-05-31 21:17:25');
+INSERT INTO `message` VALUES ('4', 'admin', 'http://localhost:9090/files/1744598284343-b1284c3e6279e6178eadd7b3d780636f.jpeg', '123', '2025-05-31 21:18:04');
+INSERT INTO `message` VALUES ('5', 'admin', 'http://localhost:9090/files/1744598284343-b1284c3e6279e6178eadd7b3d780636f.jpeg', '3', '2025-05-31 21:18:08');
+INSERT INTO `message` VALUES ('6', 'admin', 'http://localhost:9090/files/1744598284343-b1284c3e6279e6178eadd7b3d780636f.jpeg', '1', '2025-05-31 21:19:54');
+INSERT INTO `message` VALUES ('7', 'admin', 'http://localhost:9090/files/1744598284343-b1284c3e6279e6178eadd7b3d780636f.jpeg', '123', '2025-05-31 21:20:05');
+INSERT INTO `message` VALUES ('8', 'admin', 'http://localhost:9090/files/1744598284343-b1284c3e6279e6178eadd7b3d780636f.jpeg', '333', '2025-05-31 21:20:09');
+INSERT INTO `message` VALUES ('9', 'admin', 'http://localhost:9090/files/1744598284343-b1284c3e6279e6178eadd7b3d780636f.jpeg', '123', '2025-05-31 21:27:45');
+INSERT INTO `message` VALUES ('10', 'admin', 'http://localhost:9090/files/1744598284343-b1284c3e6279e6178eadd7b3d780636f.jpeg', '1', '2025-05-31 21:30:16');
+INSERT INTO `message` VALUES ('11', 'admin', 'http://localhost:9090/files/1744598284343-b1284c3e6279e6178eadd7b3d780636f.jpeg', '123', '2025-05-31 21:30:28');
+INSERT INTO `message` VALUES ('12', 'admin', 'http://localhost:9090/files/1744598284343-b1284c3e6279e6178eadd7b3d780636f.jpeg', '1', '2025-05-31 21:34:02');
+INSERT INTO `message` VALUES ('13', 'admin', 'http://localhost:9090/files/1744598284343-b1284c3e6279e6178eadd7b3d780636f.jpeg', '2', '2025-05-31 21:34:10');
+INSERT INTO `message` VALUES ('14', 'admin', 'http://localhost:9090/files/1744598284343-b1284c3e6279e6178eadd7b3d780636f.jpeg', '123', '2025-05-31 22:22:23');
+INSERT INTO `message` VALUES ('15', 'admin', 'http://localhost:9090/files/1744598284343-b1284c3e6279e6178eadd7b3d780636f.jpeg', '33', '2025-05-31 22:22:26');
+INSERT INTO `message` VALUES ('16', 'rgr', 'http://localhost:9090/files/1745917622337-报名照片.jpg', '11', '2025-05-31 22:23:48');
+INSERT INTO `message` VALUES ('17', 'admin', 'http://localhost:9090/files/1744598284343-b1284c3e6279e6178eadd7b3d780636f.jpeg', '33', '2025-05-31 22:23:52');
+INSERT INTO `message` VALUES ('18', 'admin', 'http://localhost:9090/files/1744598284343-b1284c3e6279e6178eadd7b3d780636f.jpeg', '哈哈哈', '2025-05-31 22:24:13');
+INSERT INTO `message` VALUES ('19', 'rgr', 'http://localhost:9090/files/1745917622337-报名照片.jpg', '123', '2025-05-31 22:27:35');
+INSERT INTO `message` VALUES ('20', 'rgr', 'http://localhost:9090/files/1745917622337-报名照片.jpg', '1', '2025-05-31 22:28:33');
+INSERT INTO `message` VALUES ('21', 'rgr', 'http://localhost:9090/files/1745917622337-报名照片.jpg', '哈哈哈', '2025-05-31 22:34:56');
+INSERT INTO `message` VALUES ('22', 'admin', 'http://localhost:9090/files/1744598284343-b1284c3e6279e6178eadd7b3d780636f.jpeg', '哈哈哈', '2025-05-31 22:35:12');
+INSERT INTO `message` VALUES ('25', 'admin', 'http://localhost:9090/files/1744598284343-b1284c3e6279e6178eadd7b3d780636f.jpeg', '123', '2025-05-31 22:39:51');
+INSERT INTO `message` VALUES ('26', 'rgr', 'http://localhost:9090/files/1745917622337-报名照片.jpg', '123', '2025-05-31 22:40:34');
+INSERT INTO `message` VALUES ('27', 'admin', 'http://localhost:9090/files/1744598284343-b1284c3e6279e6178eadd7b3d780636f.jpeg', '1', '2025-05-31 22:46:45');
+INSERT INTO `message` VALUES ('28', 'rgr', 'http://localhost:9090/files/1745917622337-报名照片.jpg', '134', '2025-05-31 22:47:57');
+INSERT INTO `message` VALUES ('31', 'rgr', 'http://localhost:9090/files/1745917622337-报名照片.jpg', '好样的', '2025-05-31 22:48:18');
 
 -- ----------------------------
 -- Table structure for notice
@@ -160,7 +203,7 @@ CREATE TABLE `orders` (
   KEY `user_id` (`user_id`),
   CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`goods_id`) REFERENCES `goods` (`id`),
   CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of orders
@@ -181,10 +224,13 @@ INSERT INTO `orders` VALUES ('13', '9', '3', '20250505102405', '2025-05-05 10:24
 INSERT INTO `orders` VALUES ('14', '9', '3', '20250505102822', '2025-05-05 10:28:22', '6.00', '待发货');
 INSERT INTO `orders` VALUES ('15', '9', '3', '20250505102822', '2025-05-05 10:28:22', '6.00', '待发货');
 INSERT INTO `orders` VALUES ('16', '9', '3', '20250505102822', '2025-05-05 10:28:22', '6.00', '待发货');
+INSERT INTO `orders` VALUES ('17', '9', '3', '20250523141259', '2025-05-23 14:12:59', '6.00', '待发货');
+INSERT INTO `orders` VALUES ('18', '5', '3', '20250523141301', '2025-05-23 14:13:01', '5.00', '待发货');
+INSERT INTO `orders` VALUES ('19', '5', '3', '20250523141301', '2025-05-23 14:13:01', '5.00', '待发货');
+INSERT INTO `orders` VALUES ('20', '2', '3', '20250523141315', '2025-05-23 14:13:15', '4.00', '待发货');
 
 -- ----------------------------
 -- Table structure for policy
-+
 -- ----------------------------
 DROP TABLE IF EXISTS `policy`;
 CREATE TABLE `policy` (
@@ -233,12 +279,11 @@ CREATE TABLE `praise` (
   KEY `praise_ibfk_2` (`policy_id`),
   CONSTRAINT `praise_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
   CONSTRAINT `praise_ibfk_2` FOREIGN KEY (`policy_id`) REFERENCES `policy` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of praise
 -- ----------------------------
-INSERT INTO `praise` VALUES ('1', '3', '1', '2025-04-29 17:06:29');
 
 -- ----------------------------
 -- Table structure for projectapply
@@ -286,5 +331,5 @@ CREATE TABLE `user` (
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES ('2', '123', '123', '123', null, null, 'USER', '普通户', null, '298');
-INSERT INTO `user` VALUES ('3', 'rgr', '123', 'rgr', null, null, 'USER', '贫困户', 'http://localhost:9090/files/1745917622337-报名照片.jpg', '36');
+INSERT INTO `user` VALUES ('3', 'rgr', '123', 'rgr', null, null, 'USER', '贫困户', 'http://localhost:9090/files/1745917622337-报名照片.jpg', '116');
 INSERT INTO `user` VALUES ('4', 'lfh123', '123', 'lfh123', null, null, 'USER', '普通户', null, null);
